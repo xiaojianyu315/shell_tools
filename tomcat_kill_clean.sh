@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+
 function check_param(){
     echo '====================== start check param ============================='
     APP_NAME=$1
@@ -26,6 +27,8 @@ function check_param(){
     echo '=== tomcat_home :'$TOMCAT_HOME
     echo '====================== param success ============================='
 }
+
+
 function kill(){
     APP_NAME=$1
     TOMCAT_HOME=$2
@@ -76,19 +79,13 @@ function clean(){
 }
 
 
-function start(){
-    TOMCAT_HOME=$1
-    echo '====================== start tomcat ============================='
-    sh $TOMCAT_HOME/bin/catalina.sh start
-    echo '====================== start success ============================='
 
-}
 
 app_name=$1
 tomcat_name=$2
 check_param $app_name $tomcat_name
 kill $app_name $tomcat_name
 clean $tomcat_name
-start $tomcat_name
+
 
 
